@@ -1,0 +1,29 @@
+1-
+SELECT name, population, area FROM World
+WHERE area >= 3000000 OR population >= 25000000;
+=================================================
+2-
+SELECT author_id as id
+FROM Views
+WHERE author_id = viewer_id
+GROUP BY id
+ORDER BY id asc;
+=================================================
+3-
+SELECT EmployeeUNI.unique_id, Employees.name
+FROM Employees
+LEFT JOIN EmployeeUNI ON Employees.id = EmployeeUNI.id;
+=================================================
+4-
+SELECT customer_id, COUNT(customer_id) as count_no_trans
+FROM Visits
+LEFT JOIN Transactions ON Visits.visit_id = Transactions.visit_id
+WHERE Transactions.visit_id is null
+GROUP BY customer_id;
+=================================================
+5-
+SELECT Employee.name, Bonus.bonus
+FROM Employee
+LEFT JOIN Bonus ON Employee.empId = Bonus.empId
+WHERE Bonus.bonus < 1000 OR Bonus.bonus is null;
+=================================================
